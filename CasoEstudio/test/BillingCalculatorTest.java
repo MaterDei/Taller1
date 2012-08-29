@@ -35,6 +35,8 @@ public class BillingCalculatorTest {
     private int result;
     private BigDecimal compare;
     private int total;
+    private int ending;
+    private int factor;
     public BillingCalculatorTest() {
     }
 
@@ -66,14 +68,12 @@ public class BillingCalculatorTest {
                 thenReturn(new BigDecimal(0.03));
 
         result=Product.getProductPricesBD().get("EL-001").multiply(new BigDecimal(0.95)).add(Product.getProductPricesBD().get("FU-006").multiply(new BigDecimal(0.9))).intValue();
-        compare=BillingCalculator.calculateTotalPurchase(customer,"EL-001,FU-006").getTotalPrice();
-        total=BillingCalculator.calculateTotalPurchase(customer,"EL-001,FU-006").getTotalPriceTask().intValue();
-        
+        compare=BillingCalculator.calculateTotalPurchase(customer,"EL-001,FU-006",iva).getTotalPrice();
+        total=BillingCalculator.calculateTotalPurchase(customer,"EL-001,FU-006",iva).getTotalPriceTask().intValue();
 
-        
         Assert.assertEquals(result,compare.intValue());//compare discounts
         
-        Assert.assertEquals(compare.add(compare.multiply(new BigDecimal(0.03))).intValue(), total); //compare using iva
+       Assert.assertEquals(compare.add(compare.multiply(new BigDecimal(0.03))).intValue(), total); //compare using iva
         
     }
 

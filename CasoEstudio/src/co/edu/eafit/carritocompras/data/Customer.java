@@ -7,6 +7,7 @@ public class Customer {
 	private String code;
 	private String name;
 	private List<Purchase> purchases;
+        private int points;
 
 	public Customer(String code, String name) {
 		super();
