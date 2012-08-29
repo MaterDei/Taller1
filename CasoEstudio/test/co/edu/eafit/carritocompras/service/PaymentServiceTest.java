@@ -14,7 +14,7 @@ public class PaymentServiceTest {
 	
 	@Before
 	public void setUp() {
-		customer = new Customer("xx1", "xxName");
+		customer = new Customer("xx1", "xxName",1000);
 		paymentService = new PaymentService();
 	}
 	

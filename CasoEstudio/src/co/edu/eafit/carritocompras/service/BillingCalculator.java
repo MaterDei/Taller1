@@ -38,7 +38,20 @@ public class BillingCalculator {
                 total= total.add(total.multiply(iva.ivaCalculate()));
 		purchase.setTotalPriceAfterTask(total);
                 purchase.setProducts(products);
-		
+                
+                int puntos=0;
+                puntos=purchase.getTotalPriceTask().intValue()/1000;
+                puntos=puntos+customer.getPoints();
+
+                if (puntos>1000)
+                {
+                total=total.add(total.multiply(new BigDecimal(0.02)));
+                purchase.setTotalFinal(total);
+                }
+                else
+                    purchase.setTotalFinal(total);
+                
+		//customer.setPoint(customer.getPoints()+puntos);
 		try {
 			purchase.setStatus(PurchaseStatus.PENDING);
 		} catch (ChangeStatusException e) {

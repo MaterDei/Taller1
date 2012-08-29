@@ -12,6 +12,7 @@ public class Purchase {
 	private List<Product> products;
 	private BigDecimal totalPrice;
         private BigDecimal totalPriceAfterT;
+        private BigDecimal totalFinal;
 	private String code;
 	private Customer customer;
 	private PurchaseStatus status;
@@ -99,5 +100,13 @@ public class Purchase {
 	public void setCode(String code) {
 		this.code = code;
 	}
+
+        public BigDecimal getTotalFinal(){
+                return totalFinal;
+        }
+
+        public void setTotalFinal(BigDecimal total){
+                this.totalFinal=total;
+        }
 
 }

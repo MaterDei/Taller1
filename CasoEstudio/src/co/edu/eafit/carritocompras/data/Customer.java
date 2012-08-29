@@ -9,10 +9,11 @@ public class Customer {
 	private List<Purchase> purchases;
         private int points;
 
-	public Customer(String code, String name) {
+	public Customer(String code, String name, int points) {
 		super();
 		this.code = code;
 		this.name = name;
+                this.points=points;
 	}
 
 	public String getCode() {
@@ -38,5 +39,14 @@ public class Customer {
 	public void setName(String name) {
 		this.name = name;
 	}
+
+        public void setPoint(int p)
+        {
+                this.points=p;
+        }
+
+        public int getPoints(){
+            return points;
+        }
 
 }
