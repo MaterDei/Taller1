@@ -22,8 +22,8 @@ public class BillingCalculator {
 	 *            totalAmount of prices of products included
 	 */
 
-    static IvaCalculator iva = new IvaCalculator();
-	public static Purchase calculateTotalPurchase(Customer customer, String productsFlatFile) {
+    //static IvaCalculator iva = new IvaCalculator();
+	public static Purchase calculateTotalPurchase(Customer customer, String productsFlatFile, IvaCalculator iva) {
 		Purchase purchase = new Purchase(customer);
 		List<Product>products = new ArrayList<Product>();
 		BigDecimal total = BigDecimal.ZERO;

@@ -16,7 +16,7 @@ public class IvaCalculator {
     public BigDecimal ivaCalculate  ()
     {
     //complex logic consuming remote web service
-        return new BigDecimal (0.03);
+        return new BigDecimal (0.04);
     }
 
 }
