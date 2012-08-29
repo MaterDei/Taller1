@@ -54,7 +54,7 @@ public class BillingCalculatorTest {
     @Test
     public void calculateTotalPurchase() {
         
-        Assert.assertEquals(p.getProductPricesBD().get("EL-001").multiply(new BigDecimal(0.8)).add(p.getProductPricesBD().get("FU-006").multiply(new BigDecimal(0.9))).intValue(),b.calculateTotalPurchase(customer,"EL-001,FU-006").getTotalPrice().intValue());
+        Assert.assertEquals(p.getProductPricesBD().get("EL-001").multiply(new BigDecimal(0.95)).add(p.getProductPricesBD().get("FU-006").multiply(new BigDecimal(0.9))).intValue(),b.calculateTotalPurchase(customer,"EL-001,FU-006").getTotalPrice().intValue());
 
         //p.getProductPricesBD().get("EL-001").multiply(new BigDecimal(0.2))
     }
