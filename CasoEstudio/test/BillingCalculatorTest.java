@@ -70,6 +70,11 @@ public class BillingCalculatorTest {
         result=Product.getProductPricesBD().get("EL-001").multiply(new BigDecimal(0.95)).add(Product.getProductPricesBD().get("FU-006").multiply(new BigDecimal(0.9))).intValue();
         compare=BillingCalculator.calculateTotalPurchase(customer,"EL-001,FU-006",iva).getTotalPrice();
         total=BillingCalculator.calculateTotalPurchase(customer,"EL-001,FU-006",iva).getTotalPriceTask().intValue();
+        //ending=BillingCalculator.calculateTotalPurchase(customer,"EL-001,FU-006",950).getTotalFinal().intValue();
+
+        //factor=ending/1000;
+        
+       // Assert.assertEquals(date, customer.getPoints());
 
         Assert.assertEquals(result,compare.intValue());//compare discounts
         
