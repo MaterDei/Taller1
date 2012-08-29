@@ -13,6 +13,10 @@ public class PaymentService {
 			if (creditCardService.pay(creditCardNumnber,
 					purchase.getTotalPrice())) {
 				purchase.setStatus(PurchaseStatus.APPROVED);
+                                int puntos=0;
+                                puntos=purchase.getTotalPriceTask().intValue()/1000;
+                                puntos=puntos+customer.getPoints();
+                                customer.setPoint(puntos);
 			} else {
 				purchase.setStatus(PurchaseStatus.REJECTED);
 			}

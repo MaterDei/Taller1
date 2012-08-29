@@ -82,7 +82,6 @@ public class BillingCalculatorTest {
 
        //Assert.assertEquals(compare.add(compare.multiply(new BigDecimal(0.03))).intValue(), total.intValue()); //compare using iva
 
-       //Assert.assertEquals(point, customer.getPoints());
        Assert.assertEquals(total.add(total.multiply(new BigDecimal(0.02))).intValue(),ending.intValue());
 
         
