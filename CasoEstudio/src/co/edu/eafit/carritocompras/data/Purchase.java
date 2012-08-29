@@ -11,6 +11,7 @@ public class Purchase {
 	private Calendar date;
 	private List<Product> products;
 	private BigDecimal totalPrice;
+        private BigDecimal totalPriceAfterT;
 	private String code;
 	private Customer customer;
 	private PurchaseStatus status;
@@ -81,6 +82,15 @@ public class Purchase {
 	public void setTotalPrice(BigDecimal totalPrice) {
 		this.totalPrice = totalPrice;
 	}
+
+        public void setTotalPriceAfterTask(BigDecimal after)
+        {
+                this.totalPriceAfterT=after;
+        }
+
+        public BigDecimal getTotalPriceTask(){
+                return totalPriceAfterT;
+        }
 
 	public String getCode() {
 		return code;
