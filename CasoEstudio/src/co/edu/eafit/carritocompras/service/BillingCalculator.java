@@ -9,8 +9,8 @@ import co.edu.eafit.carritocompras.data.Product;
 import co.edu.eafit.carritocompras.data.Purchase;
 import co.edu.eafit.carritocompras.data.PurchaseStatus;
 import co.edu.eafit.carritocompras.data.util.ChangeStatusException;
-import java.math.MathContext;
-import java.util.Calendar;
+//import java.math.MathContext;
+//import java.util.Calendar;
 
 public class BillingCalculator {
 
@@ -40,12 +40,13 @@ public class BillingCalculator {
                 purchase.setProducts(products);
                 
                 int puntos=0;
-                puntos=purchase.getTotalPriceTask().intValue()/1000;
-                puntos=puntos+customer.getPoints();
+                //puntos=purchase.getTotalPriceTask().intValue()/1000;
+                //puntos=puntos+customer.getPoints();
+                puntos=customer.getPoints();
 
                 if (puntos>1000)
                 {
-                total=total.add(total.multiply(new BigDecimal(0.02)));
+                total=total.subtract(total.multiply(new BigDecimal(0.02)));
                 purchase.setTotalFinal(total);
                 }
                 else
